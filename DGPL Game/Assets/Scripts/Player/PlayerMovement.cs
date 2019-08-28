@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 	public Sprite fireSprite;
+    public GameObject fireObj;
 	public Sprite waterSprite;
-	private Collision col;
+    public GameObject waterObj;
+    private Collision col;
 	private Rigidbody2D rb;
 	private SpriteRenderer sr;
 	public float speed = 5f;
@@ -77,11 +79,16 @@ public class PlayerMovement : MonoBehaviour {
 		//Enable Fire actions
 		//Disable Water actions
 		sr.sprite = fireSprite;
-	}
+        waterObj.SetActive(false);
+        fireObj.SetActive(true);
+        
+    }
 
 	private void ChangeToWater() {
 		//Enable Water actions
 		//Disable Fire actions
 		sr.sprite = waterSprite;
+        fireObj.SetActive(false);
+        waterObj.SetActive(true);
 	}
 }
