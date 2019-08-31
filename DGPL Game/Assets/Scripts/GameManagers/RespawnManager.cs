@@ -20,7 +20,7 @@ public class RespawnManager : MonoBehaviour {
 		//Clear list of respawn points at the start of every scene
 		//and set it to the player's current position
 		currentRespawn.Clear();
-		Vector3 playerPos = FindObjectOfType<PlayerMovement>().gameObject.transform.position;
+		Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").gameObject.transform.position;
 		currentRespawn.Add(playerPos);
 	}
 }
